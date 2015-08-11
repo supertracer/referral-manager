@@ -1,0 +1,43 @@
+<% @page_title = "Campaigns" %>
+
+<div class="campaigns-index">
+  <h1 style="text-align: center">CAMPAIGNS</h1>
+
+  <%= link_to(" Add Campaign", {:action => 'new'}, :class => 'glyphicon glyphicon-plus btn btn-info')%> 
+ 
+  <table class="table table-striped table-bordered table-hover">
+    <tr>
+      <th>Campaign Name</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Advocate Offer</th>
+      <th>Advocate Min Purchase</th>
+      <th>Friend Offer</th>
+      <th>Friend Min Purchase</th>
+      <th>Campaign Status</th>
+      <th>Actions</th>
+    </tr>
+    <% @campaigns.each do |c| %>
+    <tr>
+      <td><%= c.campaign_name %></td>
+      <td><%= c.campaign_start_date.strftime("%d-%b-%Y, %I:%M:%S %p") %></td>
+      <td><%= c.campaign_end_date.strftime("%d-%b-%Y, %I:%M:%S %p") %></td>
+      <td><%= c.advocate_offer_type %></td>
+      <td><%= c.advocate_min_purchase %></td>
+      <td><%= c.friend_offer_type %></td>
+      <td><%= c.friend_min_purchase %></td>
+      <td>
+      	<% if c.campaign_status == true %>
+      	<p>Active</p>
+      	<% else %>
+      	<p>Inactive</p>
+      	<% end %>
+      </td>
+      <td>
+        <%= link_to("Show", {:action => 'show', :id => c.id}, :class => 'action-show') %>
+        
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

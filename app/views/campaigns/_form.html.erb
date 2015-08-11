@@ -1,0 +1,60 @@
+
+<h2>Basic Info</h2>
+
+	
+	<div class="form-group">
+        <%= f.label(:campaign_name) %>
+        <%= f.text_field(:campaign_name, :class => "form-control", :placeholder => "Enter Campaign Name") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label(:campaign_description) %>
+        <%= f.text_area(:campaign_description, :class => "form-control", :placeholder => "Enter Description") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label(:start_date) %>
+        <%= f.date_select(:campaign_start_date, :order => [:day, :month, :year], :class => "form-control") %> --
+        <%= f.time_select(:campaign_start_date, :include_seconds => true, :ignore_date => true, :ampm => true) %> 
+       </div>     
+      
+      <div class="form-group">
+        <%= f.label(:end_date) %>
+        <%= f.date_select(:campaign_end_date, :order => [:day, :month, :year]) %> -- 
+        <%= f.time_select(:campaign_end_date, :include_seconds => true, :ignore_date => true, :ampm => true) %>
+      </div>
+      
+ <h2>Advocate Offer</h2>
+
+      <div class="form-group">
+        <%= f.label(:advocate_offer_type) %>
+        <%= f.text_field(:advocate_offer_type, :class => "form-control", :placeholder => "Enter Advocate Offer") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label(:advocate_min_purchase) %>
+        <%= f.text_field(:advocate_min_purchase, :class => "form-control", :placeholder => "Enter Advocate Min Purchase") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label(:advocate_review_period) %>
+        <%= f.text_field(:advocate_review_period, :class => "form-control", :placeholder => "Enter Advocate Review Period") %>
+      </div>
+     
+     <div class="form-group">
+        <%= f.label(:referral_code_limit) %>
+        <%= f.text_field(:referral_code_limit, :class => "form-control", :placeholder => "Enter Referral Code Limit") %>
+      </div>
+
+
+<h2>Friend Offer</h2>
+
+      <div class="form-group">
+        <%= f.label(:friend_offer_type) %>
+        <%= f.text_field(:friend_offer_type, :class => "form-control", :placeholder => "Enter Friend Offer Type") %>
+       </div>
+      
+      <div class="form-group">
+        <%= f.label(:friend_min_purchase) %>
+        <%= f.text_field(:friend_min_purchase, :class => "form-control", :placeholder => "Enter Friend Min Purchase") %>
+         </div>

@@ -1,0 +1,25 @@
+<% @page_title = "Add Campaign" %>
+
+<div class="campaigns new">
+	<h1 style="text-align: center">ADD CAMPAIGN</h1>
+	<%= link_to("<< Back to List",{:action => 'index'},:class =>'btn btn-info')%>
+
+
+<div class="container">
+<div class="jumbotron">
+	
+	
+  <%= form_for(:campaign, :url => {:action => 'create'}) do |f| %>
+
+    <%= render({:partial => "form", :locals => {:f => f}}) %>
+    
+    <%= submit_tag "Create", :class => "btn btn-default"%>
+
+  <% end %>
+  
+  
+  
+  </div>
+  </div>
+  
+</div>

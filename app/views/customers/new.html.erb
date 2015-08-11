@@ -1,0 +1,42 @@
+
+
+<div class="customers new">
+	<h1 style="text-align: center">ADD CUSTOMER</h1>
+	<%= link_to("<< Back to List",{:action => 'index'},:class =>'btn btn-info')%>
+<div class="container">
+<div class="jumbotron">
+	<div class="form-group">
+	<%= form_for(:customer, :url =>{:action => 'create'}) do |f| %>
+	
+		<table>
+			<tr>
+				<th>First Name</th>
+				<td><%= f.text_field(:first_name)%></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><%= f.text_field(:last_name)%></td>
+			</tr>
+			<tr>
+				<th>Email ID</th>
+				<td><%= f.text_field(:email)%></td>
+			</tr>
+			<tr>
+				<th>Contact Number</th>
+				<td><%= f.text_field(:mobile)%></td>
+			</tr>
+			<tr>
+				<th>Refferal code</th>
+				<td><%= f.text_field(:referral_code)%></td>
+			</tr>
+			
+					
+		</table>
+		<%= submit_tag("ADD")%>
+ </div>
+	<% end %>
+</div>
+</div>	
+	
+</div>
+	

@@ -1,0 +1,42 @@
+	<h1 style="text-align: center" > <%= @customer.first_name.capitalize %> <%= @customer.last_name.capitalize %> </h1>
+	<div style="display: inline">	
+	<h3 style="margin-left: 8%">Serial Number: <span style="font-size: 85%; margin-left: 4%"><%= @customer.id%></span></h3>
+	</div>	
+	<h3 style="margin-left: 8%">Email Id: <span style="font-size: 85%; margin-left: 9%"><%= @customer.email %></span></h3>          
+	<h3 style="margin-left: 8%">Mobile Number: <span style="font-size: 85%; margin-left: 3%"><%= @customer.mobile %></span></h3>     
+	<h3 style="margin-left: 8%">Reffered By: <span style="font-size: 85%; margin-left: 5%"><%= @customer.referred_by %></span></h3>       
+	<h3 style="margin-left: 8%">Referral Code: <span style="font-size: 85%; margin-left: 4%"><%= @customer.referral_code %></span></h3>
+	<h3 style="margin-left: 8%">Total No of Referrals: <span style="font-size: 85%; margin-left: 4%"><%= @customer.no_of_referrals %></span></h3> 
+	<h3 style="margin-left: 8%">Current No of Referrals: <span style="font-size: 85%; margin-left: 4%"><%= @customer.no_of_referrals %></span></h3>    
+
+	
+<h2 style="text-align: center;margin-top: 10%;">Redemption History</h2>
+
+<div class="container">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>S.No</th>          	
+				<th>REDEMPTION CODE</th>
+				<th>DATE OF REDEMPTION</th>                                
+			</tr>
+		</thead>
+		<tbody>
+			<% @customer.codes.each do |code| %>
+			<tr>	
+				<td><%= code.id%></td>
+				<td><%= code.redemption_code %></td>
+				<td>
+					<% if code.redeemed_on.nil? %>
+					   UN-USED
+					<% else %>
+					   <%= code.redeemed_on %>
+					<% end %>
+				</td>		
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+

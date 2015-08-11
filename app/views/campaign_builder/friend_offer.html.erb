@@ -1,0 +1,19 @@
+
+<h2>Friend Offer<h2>
+		
+<%= form_for(:campaign, :url => wizard_path, :method => :put) do |f|  %>
+
+	<table class="campaign form fields">
+      <tr>
+        <th>Type</th>
+        <td><%= f.text_field(:friend_offer_type) %></td>
+      </tr>
+      <tr>
+        <th>Minimum Purchase</th>
+        <td><%= f.text_field(:friend_min_purchase) %></td>
+      </tr>   
+   </table>
+
+<%= submit_tag "Next"%>
+  
+<% end %>

@@ -1,0 +1,30 @@
+
+<h2>Advocate Offer<h2>
+
+<%= form_for(:campaign, :url => wizard_path(:id=>@campaign.id), :method => :put) do |f|  %>
+  
+    <table class="campaign form fields">
+      <tr>
+        <th>Offer Type</th>
+        <td><%= f.text_field(:advocate_offer_type) %></td>
+      </tr>
+      <tr>
+        <th>Min purchase</th>
+        <td><%= f.text_field(:advocate_min_purchase) %></td>
+      </tr>
+      <tr>
+        <th>Review Period</th>
+        <td><%= f.text_field(:advocate_review_period) %></td>
+      </tr>
+      <tr>
+        <th>Referral Code Limit</th>
+        <td><%= f.text_field(:referral_code_limit) %></td>
+      </tr>
+    </table>
+
+	
+
+  <%= submit_tag "Next"%>
+  
+<% end %>
+
